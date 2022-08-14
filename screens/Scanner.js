@@ -17,7 +17,7 @@ export default function Scanner() {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-    setLinks(() => [...BarCodeScanner, data]);
+    setLinks([... links, data]);
     console.log(links);
   };
 
@@ -39,7 +39,7 @@ export default function Scanner() {
         <Button title={"Tap to Scan Again"} onPress={() => setScanned(false)} />
       )}
       <Button title={"All links"} onPress={() => console.log(links)} />
-    </View>
+    </View> 
   );
 }
 
